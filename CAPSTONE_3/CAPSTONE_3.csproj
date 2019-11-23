@@ -161,6 +161,22 @@
     <Compile Include="Migrations\201911230229134_DbCreation.Designer.cs">
       <DependentUpon>201911230229134_DbCreation.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201911230330066_DBSeed.cs" />
+    <Compile Include="Migrations\201911230330066_DBSeed.Designer.cs">
+      <DependentUpon>201911230330066_DBSeed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911230349386_real-dbSeed.cs" />
+    <Compile Include="Migrations\201911230349386_real-dbSeed.Designer.cs">
+      <DependentUpon>201911230349386_real-dbSeed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911230402253_realreal-dbSeed.cs" />
+    <Compile Include="Migrations\201911230402253_realreal-dbSeed.Designer.cs">
+      <DependentUpon>201911230402253_realreal-dbSeed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911230404566_realrealreal-dbseed.cs" />
+    <Compile Include="Migrations\201911230404566_realrealreal-dbseed.Designer.cs">
+      <DependentUpon>201911230404566_realrealreal-dbseed.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Course.cs" />
     <Compile Include="Models\Registration.cs" />
@@ -227,6 +243,18 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201911230229134_DbCreation.resx">
       <DependentUpon>201911230229134_DbCreation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911230330066_DBSeed.resx">
+      <DependentUpon>201911230330066_DBSeed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911230349386_real-dbSeed.resx">
+      <DependentUpon>201911230349386_real-dbSeed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911230402253_realreal-dbSeed.resx">
+      <DependentUpon>201911230402253_realreal-dbSeed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911230404566_realrealreal-dbseed.resx">
+      <DependentUpon>201911230404566_realrealreal-dbseed.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

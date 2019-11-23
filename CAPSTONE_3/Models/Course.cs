@@ -13,8 +13,8 @@ namespace CAPSTONE_3.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public byte CourseId { get; set; }
 
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public DateTime DateCreated { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
+        public DateTime? DateCreated { get; set; }
 
         public string CourseName { get; set; }
         public string Description { get; set; }

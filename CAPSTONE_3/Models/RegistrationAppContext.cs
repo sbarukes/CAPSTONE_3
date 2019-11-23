@@ -13,7 +13,7 @@ namespace CAPSTONE_3.Models
         public DbSet<Registration> Registrations { get; set; }
         public RegistrationAppContext() : base("RegistrationAppDatabase")
         {
-
+            Database.SetInitializer(new CreateDatabaseIfNotExists<RegistrationAppContext>());
         }
     }
 }

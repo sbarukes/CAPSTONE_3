@@ -14,7 +14,7 @@ namespace CAPSTONE_3.Models
         public byte RegistrationId { get; set; }
 
         [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
-        public DateTime DateRegistered { get; set; }
+        public DateTime? DateRegistered { get; set; }
 
         public Student Student { get; set; }
         public Course Course { get; set; }
