@@ -41,11 +41,11 @@ namespace CAPSTONE_3.Repositories
             return students.ToList();
         }
 
-        public bool LoginStudent(Student st)
+        public bool LoginStudent(string username, string password)
         {
             var check = from s in db.Students
-                        where s.Username == st.Username
-                        && s.Password == st.Password
+                        where s.Username == username
+                        && s.Password == password
                         select s;
             if(check.Count() > 0)
             {
