@@ -1,0 +1,106 @@
+﻿@model CAPSTONE_3.Models.Student
+
+@{
+    ViewBag.Title = "Account Creation";
+    Layout = null;
+}
+
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title - Registration App</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+
+<html>
+    <body>
+        <div class="container form-container" style="width:800px; height:500px; margin: 0% 30%; text-align: center;">
+
+            @using (Html.BeginForm("Create", "StudentAccount"))
+            {
+                <div class="row title-row">
+                    <h3>Account Creation Form</h3>
+                </div>
+                <hr />
+
+                if(!string.IsNullOrEmpty(ViewBag.AccountCreateFail)){
+                    <div class="row err-row">
+                        <span>@ViewBag.AccountCreateFail</span>
+                    </div>
+                }
+
+                <div class="row reg-row">
+                    <div class="col-lg-3">
+                        <h4>First Name</h4>
+                    </div>
+                    <div class="col-lg-3">
+                        @Html.TextBoxFor(x => x.FirstName)
+                    </div>
+                </div>
+                <div class="row reg-row">
+                    <div class="col-lg-3">
+                        <h4>Last Name</h4>
+                    </div>
+                    <div class="col-lg-3">
+                        @Html.TextBoxFor(x => x.LastName)
+                    </div>
+                </div>
+                <div class="row reg-row">
+                    <div class="col-lg-3">
+                        <h4>Username</h4>
+                    </div>
+                    <div class="col-lg-3">
+                        @Html.TextBoxFor(x => x.Username)
+                    </div>
+                </div>
+                <div class="row reg-row">
+                    <div class="col-lg-3">
+                        <h4>Password</h4>
+                    </div>
+                    <div class="col-lg-3">
+                        @Html.TextBoxFor(x => x.Password)
+                    </div>
+                </div>
+                <div class="row reg-row">
+                    <div class="col-lg-3">
+                        <h4>Email Address</h4>
+                    </div>
+                    <div class="col-lg-3">
+                        @Html.TextBoxFor(x => x.Email)
+                    </div>
+                </div>
+                <div class="row reg-row">
+                    <div class="col-lg-3">
+                        <h4>Phone #</h4>
+                    </div>
+                    <div class="col-lg-3">
+                        @Html.TextBoxFor(x => x.Phone)
+                    </div>
+                </div>
+                <div class="row reg-row">
+                    <div class="col-lg-3">
+                        <h4>Address</h4>
+                    </div>
+                    <div class="col-lg-3">
+                        @Html.TextBoxFor(x => x.Address)
+                    </div>
+                </div>
+                <div class="row">
+                    <div style="align-content: center;">
+                        <input type="submit" value="Create Account" />
+                    </div>
+                </div>
+            }
+        </div>
+    </body>
+</html>
+
+<style>
+    .form-container{
+        border: 1px solid black;
+        border-radius: 10%;
+    }
+    .reg-row{
+        margin-left: 25%;
+    }
+</style>

@@ -18,7 +18,7 @@ namespace CAPSTONE_3.Repositories
                 var check = from s in db.Students
                             where s.Username == st.Username
                             select s;
-                if (check.Count() > 0)
+                if (check.Count() == 0)
                 {
                     db.Students.Add(st);
                     db.SaveChanges();
@@ -28,9 +28,9 @@ namespace CAPSTONE_3.Repositories
                     throw new Exception("Username is already in use, please select another");
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw new Exception("New student was not created");
+                throw new Exception("New student was not created" + ": " + ex.Message);
             }
         }
 

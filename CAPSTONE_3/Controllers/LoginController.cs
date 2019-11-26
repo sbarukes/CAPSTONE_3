@@ -15,6 +15,7 @@ namespace CAPSTONE_3.Controllers
         // GET: Login
         public ActionResult Index()
         {
+            ViewBag.LoginFail = Session["message"];
             return View();
         }
 
@@ -22,7 +23,15 @@ namespace CAPSTONE_3.Controllers
         public ActionResult LoginCheck(LoginViewModel vm)
         {
             var lCheck = _student.LoginStudent(vm.UserName, vm.Password);
-            return View();
+            if (lCheck)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+            else
+            {
+                Session["message"] = "Your username or password is incorrect";
+                return RedirectToAction("Index", "Login");
+            }
         }
     }
 }
