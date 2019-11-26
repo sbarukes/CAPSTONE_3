@@ -25,6 +25,7 @@ namespace CAPSTONE_3.Controllers
             var lCheck = _student.LoginStudent(vm.UserName, vm.Password);
             if (lCheck)
             {
+                Session["currentUser"] = _student.GetAll().Where(x => x.Username == vm.UserName).FirstOrDefault();
                 return RedirectToAction("Index", "Home");
             }
             else

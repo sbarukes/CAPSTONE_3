@@ -18,6 +18,18 @@ namespace CAPSTONE_3.Controllers
             return View();
         }
 
+        public ActionResult _Update()
+        {
+            var st = Session["currentUser"];
+            return View(st);
+        }
+
+        [HttpPost]
+        public ActionResult Update(Student st)
+        {
+            return View();
+        }
+
         [HttpPost]
         public ActionResult Create(Student st)
         {

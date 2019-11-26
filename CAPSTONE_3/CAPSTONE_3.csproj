@@ -233,6 +233,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\StudentAccount\Index.cshtml" />
+    <Content Include="Views\StudentAccount\_Update.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

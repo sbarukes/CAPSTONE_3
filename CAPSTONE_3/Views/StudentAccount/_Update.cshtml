@@ -1,0 +1,102 @@
+﻿@model CAPSTONE_3.Models.Student
+
+@{
+    ViewBag.Title = "Update Account";
+}
+
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title - Registration App</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+
+<html>
+<body>
+    <div class="container form-container" style="width:800px; height:500px; margin: 10% 20%; text-align: center;">
+
+        @using (Html.BeginForm("Update", "StudentAccount"))
+        {
+            <div class="row title-row">
+                <h3>Account Update Form</h3>
+            </div>
+            <hr />
+
+            <div class="row reg-row">
+                <div class="col-lg-3">
+                    <h4>First Name</h4>
+                </div>
+                <div class="col-lg-3">
+                    @Html.TextBoxFor(x => x.FirstName, new {@value = "Model.FirstName" })
+                </div>
+            </div>
+            <div class="row reg-row">
+                <div class="col-lg-3">
+                    <h4>Last Name</h4>
+                </div>
+                <div class="col-lg-3">
+                    @Html.TextBoxFor(x => x.LastName, new { @value = "Model.LastName" })
+                </div>
+            </div>
+            <div class="row reg-row">
+                <div class="col-lg-3">
+                    <h4>Username</h4>
+                </div>
+                <div class="col-lg-3">
+                    @Html.TextBoxFor(x => x.Username, new { @value = "Model.Username" })
+                </div>
+            </div>
+            <div class="row reg-row">
+                <div class="col-lg-3">
+                    <h4>Password</h4>
+                </div>
+                <div class="col-lg-3">
+                    @Html.TextBoxFor(x => x.Password, new { @value = "Model.Password" })
+                </div>
+            </div>
+            <div class="row reg-row">
+                <div class="col-lg-3">
+                    <h4>Email Address</h4>
+                </div>
+                <div class="col-lg-3">
+                    @Html.TextBoxFor(x => x.Email, new { @value = "Model.Email" })
+                </div>
+            </div>
+            <div class="row reg-row">
+                <div class="col-lg-3">
+                    <h4>Phone #</h4>
+                </div>
+                <div class="col-lg-3">
+                    @Html.TextBoxFor(x => x.Phone, new { @value = "Model.Phone" })
+                </div>
+            </div>
+            <div class="row reg-row">
+                <div class="col-lg-3">
+                    <h4>Address</h4>
+                </div>
+                <div class="col-lg-3">
+                    @Html.TextBoxFor(x => x.Address, new { @value = "Model.Address" })
+                </div>
+            </div>
+            <div class="row">
+                <div style="align-content: center;">
+                    <input type="submit" value="Update Account" />
+                </div>
+            </div>
+        }
+    </div>
+</body>
+</html>
+
+<style>
+    .form-container {
+        border: 1px solid black;
+        border-radius: 10%;
+    }
+
+    .reg-row {
+        margin-left: 25%;
+    }
+</style>
+
+
