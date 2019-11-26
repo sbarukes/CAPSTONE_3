@@ -27,7 +27,9 @@ namespace CAPSTONE_3.Controllers
         [HttpPost]
         public ActionResult Update(Student st)
         {
-            return View();
+            _student.UpdateStudentAccount(st);
+            Session["currentUser"] = _student.GetAll().Where(x => x.Username == st.Username).FirstOrDefault();
+            return RedirectToAction("_Update", "StudentAccount");
         }
 
         [HttpPost]

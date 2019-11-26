@@ -66,6 +66,11 @@ namespace CAPSTONE_3.Repositories
 
             foreach(var student in check)
             {
+                student.FirstName = st.FirstName;
+                student.LastName = st.LastName;
+                student.Address = st.Address;
+                student.Email = st.Email;
+                student.Phone = st.Phone;
                 student.Username = st.Username;
                 student.Password = st.Password;
             }
