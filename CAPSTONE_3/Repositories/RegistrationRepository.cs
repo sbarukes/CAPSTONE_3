@@ -46,5 +46,36 @@ namespace CAPSTONE_3.Repositories
             db.Registrations.Remove(reg);
             db.SaveChanges();
         }
+
+        public MainModel Get(Student st)
+        {
+            return Getter(st);
+        }
+
+        private MainModel Getter(Student st)
+        {
+            CourseRepository _c = new CourseRepository();
+            RegistrationRepository _r = new RegistrationRepository();
+            StudentRepository _s = new StudentRepository();
+            var courses = _c.GetAll();
+            var stu = _s.GetAll();
+            var regs = _r.GetRegistrationsByStudent(st);
+
+            foreach (var r in regs)
+            {
+                foreach (var c in courses.ToList())
+                {
+                    if (r.Course.CourseId == c.CourseId)
+                    {
+                        courses.Remove(c);
+                    }
+                }
+            }
+
+            var model = new MainModel();
+            model.Courses = courses;
+            model.Registrations = regs;
+            return model;
+        }
     }
 }
