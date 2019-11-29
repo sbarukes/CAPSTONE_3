@@ -11,14 +11,27 @@ namespace CAPSTONE_3.Controllers
     public class HomeController : Controller
     {
         RegistrationRepository _r = new RegistrationRepository();
+        CourseRepository _c = new CourseRepository();
 
         public ActionResult Index()
         {
-            var model = _r.Get((Student)Session["currentUser"]);
+            var model = _r.Get(Globals.LoggedInUser);
             return View(model);
         }
-
-        //Abstracts the logic from PublicGet
         
+        public ActionResult Delete(int regId)
+        {
+            _r.DeleteRegistration(regId);
+            return RedirectToAction("Index", "Home");
+        }
+
+        public ActionResult Add(int cId)
+        {
+            var user = Globals.LoggedInUser;
+            var course = _c.GetAll().Where(x => x.CourseId == cId).FirstOrDefault();
+            _r.CreateRegistration(user, course);
+            return RedirectToAction("Index", "Home");
+        }
+
     }
 }

@@ -30,20 +30,19 @@ namespace CAPSTONE_3.Repositories
 
         public void CreateRegistration(Student st, Course co)
         {
-            Registration reg = new Registration
-            {
-                Student = st,
-                Course = co,
-                DateRegistered = DateTime.Now
-            };
-            db.Registrations.Add(reg);
-            db.SaveChanges();
+            db.Database.ExecuteSqlCommand($"INSERT INTO Registrations(Course_CourseId, Student_StudentId) VALUES({co.CourseId}, {st.StudentId})");
+            //Registration reg = new Registration();
+            //reg.Student = st;
+            //reg.Course = co;
+            //reg.DateRegistered = DateTime.Now;
+            //db.Registrations.Add(reg);
+            //db.SaveChanges();
         }
 
-        public void DeleteRegistration(Registration reg)
+        public void DeleteRegistration(int regId)
         {
-            
-            db.Registrations.Remove(reg);
+            var deleter = GetRegistrationss().Where(x => x.RegistrationId == regId).FirstOrDefault();
+            db.Registrations.Remove(deleter);
             db.SaveChanges();
         }
 
@@ -65,7 +64,7 @@ namespace CAPSTONE_3.Repositories
             {
                 foreach (var c in courses.ToList())
                 {
-                    if (r.Course.CourseId == c.CourseId)
+                    if (r.Course.CourseName == c.CourseName)
                     {
                         courses.Remove(c);
                     }
