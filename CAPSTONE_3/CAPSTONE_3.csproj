@@ -179,9 +179,14 @@
     <Compile Include="Migrations\201911230404566_realrealreal-dbseed.Designer.cs">
       <DependentUpon>201911230404566_realrealreal-dbseed.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201911290334259_reg_seed.cs" />
+    <Compile Include="Migrations\201911290334259_reg_seed.Designer.cs">
+      <DependentUpon>201911290334259_reg_seed.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Course.cs" />
     <Compile Include="Models\LoginViewModel.cs" />
+    <Compile Include="Models\MainModel.cs" />
     <Compile Include="Models\Registration.cs" />
     <Compile Include="Models\RegistrationAppContext.cs" />
     <Compile Include="Models\Student.cs" />
@@ -228,8 +233,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\StudentAccount\Index.cshtml" />
@@ -266,6 +269,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201911230404566_realrealreal-dbseed.resx">
       <DependentUpon>201911230404566_realrealreal-dbseed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911290334259_reg_seed.resx">
+      <DependentUpon>201911290334259_reg_seed.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

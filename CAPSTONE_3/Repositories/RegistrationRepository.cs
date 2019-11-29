@@ -1,6 +1,7 @@
 ﻿using CAPSTONE_3.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 
@@ -15,7 +16,9 @@ namespace CAPSTONE_3.Repositories
             var regs = from r in db.Registrations
                        where r.Student.StudentId == st.StudentId
                        select r;
-            return regs.ToList();
+            var returnRegs = regs.Include(reg => reg.Course)
+                .Include(reg => reg.Student).ToList();
+            return returnRegs;
         }
 
         public List<Registration> GetRegistrationss()

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CAPSTONE_3.Models;
+using CAPSTONE_3.Repositories;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,23 +10,37 @@ namespace CAPSTONE_3.Controllers
 {
     public class HomeController : Controller
     {
+        CourseRepository _c = new CourseRepository();
+        RegistrationRepository _r = new RegistrationRepository();
+        StudentRepository _s = new StudentRepository();
+
         public ActionResult Index()
         {
-            return View();
+            var model = Getter();
+            return View(model);
         }
 
-        public ActionResult About()
+        private MainModel Getter()
         {
-            ViewBag.Message = "Your application description page.";
+            var courses = _c.GetAll();
+            var stu = _s.GetAll();
+            var regs = _r.GetRegistrationsByStudent((Student)Session["currentUser"]);
 
-            return View();
-        }
+            foreach(var r in regs)
+            {
+                foreach(var c in courses.ToList())
+                {
+                    if(r.Course.CourseId == c.CourseId)
+                    {
+                        courses.Remove(c);
+                    }
+                }
+            }
 
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
+            var model = new MainModel();
+            model.Courses = courses;
+            model.Registrations = regs;
+            return model;
         }
     }
 }
