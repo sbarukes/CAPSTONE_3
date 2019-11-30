@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28010.2046
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CAPSTONE_3", "CAPSTONE_3\CAPSTONE_3.csproj", "{8DEF5923-C9BE-4A37-8F34-10207DE5B90B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CAPSTONETests", "CAPSTONETests\CAPSTONETests.csproj", "{44629179-D549-47C6-91E3-C3E06A78F79E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{8DEF5923-C9BE-4A37-8F34-10207DE5B90B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8DEF5923-C9BE-4A37-8F34-10207DE5B90B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8DEF5923-C9BE-4A37-8F34-10207DE5B90B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44629179-D549-47C6-91E3-C3E06A78F79E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44629179-D549-47C6-91E3-C3E06A78F79E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44629179-D549-47C6-91E3-C3E06A78F79E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44629179-D549-47C6-91E3-C3E06A78F79E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
