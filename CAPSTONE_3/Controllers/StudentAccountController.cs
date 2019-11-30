@@ -20,15 +20,13 @@ namespace CAPSTONE_3.Controllers
 
         public ActionResult _Update()
         {
-            var st = Session["currentUser"];
-            return View(st);
+            return View(Globals.LoggedInUser);
         }
 
         [HttpPost]
         public ActionResult Update(Student st)
         {
             _student.UpdateStudentAccount(st);
-            Session["currentUser"] = _student.GetAll().Where(x => x.Username == st.Username).FirstOrDefault();
             return RedirectToAction("_Update", "StudentAccount");
         }
 

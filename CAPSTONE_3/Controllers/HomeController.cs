@@ -15,6 +15,7 @@ namespace CAPSTONE_3.Controllers
 
         public ActionResult Index()
         {
+            _r.TempDelete();
             var model = _r.Get(Globals.LoggedInUser);
             return View(model);
         }

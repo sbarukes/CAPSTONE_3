@@ -41,14 +41,20 @@ namespace CAPSTONE_3.Repositories
 
         public void DeleteRegistration(int regId)
         {
-            var deleter = GetRegistrationss().Where(x => x.RegistrationId == regId).FirstOrDefault();
-            db.Registrations.Remove(deleter);
-            db.SaveChanges();
+            db.Database.ExecuteSqlCommand($"DELETE FROM Registrations WHERE RegistrationId = {regId}");
+            //var deleter = GetRegistrationss().Where(x => x.RegistrationId == regId).FirstOrDefault();
+            //db.Registrations.Remove(deleter);
+            //db.SaveChanges();
         }
 
         public MainModel Get(Student st)
         {
             return Getter(st);
+        }
+
+        public void TempDelete()
+        {
+            
         }
 
         private MainModel Getter(Student st)
