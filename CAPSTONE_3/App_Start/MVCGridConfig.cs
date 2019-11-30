@@ -82,6 +82,30 @@ namespace CAPSTONE_3
                 })
             );
 
+            MVCGridDefinitionTable.Add("ReportGrid", new MVCGridBuilder<CourseInstructorCount>()
+                .WithAuthorizationType(AuthorizationType.AllowAnonymous)
+                .AddColumns(cols =>
+                {
+                    cols.Add().WithColumnName("CourseIns")
+                        .WithHeaderText("Instructor")
+                        .WithValueExpression(i => i.Instructor); // use the Value Expression to return the cell text for this column
+                    cols.Add().WithColumnName("CourseCount")
+                        .WithHeaderText("Course Count")
+                        .WithValueExpression(i => i.Count.ToString());
+                })
+                .WithRetrieveDataMethod((context) =>
+                {
+                    CourseRepository _c = new CourseRepository();
+                    var courses = _c.CountCourses();
+                    return new QueryResult<CourseInstructorCount>()
+                    {
+                        Items = courses,
+                        TotalRecords = 0 // if paging is enabled, return the total number of records of all pages
+                    };
+
+                })
+            );
+
         }
     }
 }

@@ -27,6 +27,7 @@ namespace CAPSTONE_3.Controllers
         public ActionResult Update(Student st)
         {
             _student.UpdateStudentAccount(st);
+            Globals.LoggedInUser = _student.GetAll().Where(x => x.Username == st.Username).FirstOrDefault();
             return RedirectToAction("_Update", "StudentAccount");
         }
 

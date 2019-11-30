@@ -19,7 +19,12 @@ namespace CAPSTONE_3.Controllers
             var model = _r.Get(Globals.LoggedInUser);
             return View(model);
         }
-        
+
+        public ActionResult Report()
+        {
+            return View();
+        }
+
         public ActionResult Delete(int regId)
         {
             _r.DeleteRegistration(regId);

@@ -16,5 +16,19 @@ namespace CAPSTONE_3.Repositories
                            select c;
             return students.ToList();
         }
+
+        public List<CourseInstructorCount> CountCourses()
+        {
+            var courses = GetAll();
+            var instructorCount =
+                from c in courses
+                group c by c.Instructor into insGroup
+                select new CourseInstructorCount
+                {
+                    Instructor = insGroup.Key,
+                    Count = insGroup.Count()
+                };
+            return instructorCount.ToList();
+        }
     }
 }

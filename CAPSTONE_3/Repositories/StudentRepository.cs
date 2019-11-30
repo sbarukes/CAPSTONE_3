@@ -74,7 +74,6 @@ namespace CAPSTONE_3.Repositories
                 student.Username = st.Username;
                 student.Password = st.Password;
             }
-
             db.SaveChanges();
         }
     }

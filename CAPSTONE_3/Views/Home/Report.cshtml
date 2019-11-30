@@ -1,0 +1,26 @@
+﻿@model CAPSTONE_3.Models.CourseInstructorCount
+@using MVCGrid.Web;
+@using MVCGrid.Web.Models;
+@{
+    ViewBag.Title = "Report";
+}
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>Report</title>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="row">
+                <h3>Report detatiling Course count for each instructor: @DateTime.Now</h3>
+            </div>
+            <div class="row">
+                @Html.MVCGrid("ReportGrid")
+            </div>
+        </div>
+    </body>
+</html>
