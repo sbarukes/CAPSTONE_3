@@ -8,6 +8,7 @@ using System.Web.Mvc;
 
 namespace CAPSTONE_3.Controllers
 {
+    //Inheritance
     public class HomeController : Controller
     {
         RegistrationRepository _r = new RegistrationRepository();

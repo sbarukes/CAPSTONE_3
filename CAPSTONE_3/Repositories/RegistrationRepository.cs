@@ -57,6 +57,7 @@ namespace CAPSTONE_3.Repositories
             
         }
 
+        //Encapsulation
         private MainModel Getter(Student st)
         {
             CourseRepository _c = new CourseRepository();

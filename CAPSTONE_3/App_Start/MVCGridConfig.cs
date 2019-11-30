@@ -35,10 +35,10 @@ namespace CAPSTONE_3
                 })
                 .WithRetrieveDataMethod((context) =>
                 {
-                    CourseRepository _c = new CourseRepository();
+                    RegistrationRepository _r = new RegistrationRepository();
                     return new QueryResult<Course>()
                     {
-                        Items = _c.GetAll(),
+                        Items = _r.Get(Globals.LoggedInUser).Courses,
                         TotalRecords = 0 // if paging is enabled, return the total number of records of all pages
                     };
 
