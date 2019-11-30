@@ -7,6 +7,7 @@ using System.Web;
 
 namespace CAPSTONE_3.Models
 {
+    //Data Annotaion indicates Server Validation
     public class Course
     {
         [Key]
