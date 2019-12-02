@@ -25,9 +25,9 @@ namespace CAPSTONE_3
                     cols.Add().WithColumnName("CourseName")
                         .WithHeaderText("Course Name")
                         .WithValueExpression(i => i.CourseName); // use the Value Expression to return the cell text for this column
-                    cols.Add().WithColumnName("CourseDesc")
-                        .WithHeaderText("Course Description")
-                        .WithValueExpression(i => i.Description);
+                    cols.Add().WithColumnName("CourseIns")
+                        .WithHeaderText("Course Instructor")
+                        .WithValueExpression(i => i.Instructor);
                     cols.Add().WithColumnName("Action")
                         .WithHeaderText("Action")
                         .WithValueExpression((i, c) => c.UrlHelper.Action("Add", "Home", new { cId = i.CourseId }))
